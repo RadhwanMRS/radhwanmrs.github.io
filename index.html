@@ -4,21 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rathwan Ben Moussa — Développeur d'applications</title>
-<meta name="description" content="Développeur indépendant d'applications mobiles Android et iOS.">
+<meta name="description" content="Rathwan Ben Moussa, développeur indépendant d'applications mobiles. Compétences : mobile, backend Java, cloud Kubernetes, frontend Angular.">
 <style>
 :root {
   --paper: #faf3e8;
   --paper-raised: #f2e6d4;
+  --line: #e4d4bd;
   --ink: #2e241b;
-  --ink-soft: #7a6a5b;
-  --gold: #c8912f;
+  --ink-soft: #6e5e4f;
+  --gold: #9a6a17;
+  --gold-soft: #c8912f;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --paper: #14100c;
     --paper-raised: #221b14;
+    --line: #3a2f24;
     --ink: #f3e9dc;
     --ink-soft: #b3a393;
+    --gold: #e0ad55;
+    --gold-soft: #c8912f;
   }
 }
 * { box-sizing: border-box; }
@@ -30,44 +35,109 @@ body {
   font-family: Nunito, "Segoe UI", system-ui, -apple-system, sans-serif;
   line-height: 1.6;
 }
-main { max-width: 720px; margin: 0 auto; padding: 64px 0 80px; }
+main { max-width: 880px; margin: 0 auto; padding: 72px 0 80px; }
+a { color: var(--gold); }
 header { text-align: center; }
-h1 { font-size: 2rem; margin: 0 0 8px; }
-h2 { font-size: 1.3rem; margin: 48px 0 16px; }
-.lead { font-size: 1.15rem; color: var(--ink-soft); margin: 0; }
+.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 700; color: var(--gold); margin: 0 0 12px; }
+h1 { font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.15; margin: 0 0 14px; }
+h2 { font-size: 1.4rem; margin: 64px 0 8px; }
+.section-lead { color: var(--ink-soft); margin: 0 0 24px; }
+.lead { font-size: 1.15rem; color: var(--ink-soft); margin: 0 auto; max-width: 600px; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 24px; padding: 0; list-style: none; }
+.chips li { border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.card { background: var(--paper-raised); border-radius: 18px; padding: 22px 22px 20px; }
+.card svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.card h3 { margin: 10px 0 6px; font-size: 1.08rem; }
+.card p { margin: 0 0 12px; color: var(--ink-soft); font-size: .96rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+.tags li { background: var(--paper); border-radius: 8px; padding: 2px 9px; font-size: .8rem; font-weight: 600; }
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; padding: 0; list-style: none; margin: 0; }
+.principles li { border-top: 2px solid var(--gold-soft); padding-top: 12px; }
+.principles strong { display: block; margin-bottom: 2px; }
+.principles span { color: var(--ink-soft); font-size: .95rem; }
 .apps { display: grid; gap: 16px; }
-.app {
-  display: flex; gap: 18px; align-items: center;
-  background: var(--paper-raised); border-radius: 18px; padding: 18px 20px;
-  color: inherit; text-decoration: none;
-}
-.app img { width: 64px; height: 64px; border-radius: 15px; flex-shrink: 0; }
+.app { display: flex; gap: 18px; align-items: center; background: var(--paper-raised); border-radius: 18px; padding: 18px 20px; color: inherit; text-decoration: none; }
+a.app:hover { outline: 2px solid var(--gold-soft); }
+.app img, .app .ph { width: 64px; height: 64px; border-radius: 15px; flex-shrink: 0; }
+.app .ph { display: grid; place-items: center; background: var(--paper); }
+.app .ph svg { width: 32px; height: 32px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .app h3 { margin: 0 0 2px; font-size: 1.05rem; }
 .app p { margin: 0; color: var(--ink-soft); }
-a { color: var(--gold); }
-footer { text-align: center; padding-top: 56px; color: var(--ink-soft); font-size: 0.9rem; }
+.badge { display: inline-block; font-size: .72rem; font-weight: 700; border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; margin-left: 6px; vertical-align: middle; color: var(--ink-soft); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; text-align: center; }
+.stats div { padding: 8px; }
+.stats b { display: block; font-size: 1.6rem; color: var(--gold); }
+.stats span { color: var(--ink-soft); font-size: .92rem; }
+.contact { text-align: center; background: var(--paper-raised); border-radius: 18px; padding: 28px 20px; margin-top: 64px; }
+.contact h2 { margin-top: 0; }
+footer { text-align: center; padding-top: 48px; color: var(--ink-soft); font-size: .9rem; }
 </style>
 </head>
 <body>
 <main>
   <header>
+    <p class="eyebrow">Développeur d'applications</p>
     <h1>Rathwan Ben Moussa</h1>
-    <p class="lead">Développeur indépendant d'applications mobiles</p>
+    <p class="lead">Je conçois des applications utiles, sobres et fiables — de l'écran mobile jusqu'au serveur qui le fait tourner. Sur mon temps libre, je publie mes propres apps pour Android et iOS.</p>
+    <ul class="chips" aria-label="Technologies principales">
+      <li>Flutter</li><li>Unity / C#</li><li>Java · Spring Boot</li><li>Angular</li><li>Kubernetes</li><li>PostgreSQL</li>
+    </ul>
   </header>
 
-  <h2>À propos</h2>
-  <p>Sur mon temps libre, en parallèle de mon activité salariée, je conçois
-  et publie mes propres applications mobiles pour Android et iOS. Chaque
-  projet part d'un besoin concret, et je m'en occupe de bout en bout :
-  conception, développement, tests et publication.</p>
-  <p>Mes applications reposent sur trois principes : une interface claire,
-  qui va à l'essentiel ; le respect de la vie privée, sans compte imposé ni
-  données collectées inutilement ; et un fonctionnement hors ligne chaque
-  fois que c'est possible.</p>
-  <p>Je travaille avec Flutter, ce qui me permet de proposer la même qualité
-  d'expérience sur toutes les plateformes.</p>
+  <h2>Ce que je sais faire</h2>
+  <p class="section-lead">Plus de quinze ans de développement logiciel, mis au service de mes applications.</p>
+  <div class="grid">
+    <section class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+      <h3>Applications mobiles</h3>
+      <p>Apps Android et iOS de bout en bout : conception, développement, tests et publication sur les stores.</p>
+      <ul class="tags"><li>Flutter</li><li>Unity</li><li>C#</li><li>Hors ligne</li></ul>
+    </section>
+    <section class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+      <h3>Algorithmes &amp; IA de jeu</h3>
+      <p>Moteurs de jeu maison, comme une IA d'échecs minimax avec élagage alpha-bêta, qui tourne entièrement sur le téléphone.</p>
+      <ul class="tags"><li>Minimax</li><li>Alpha-bêta</li><li>Performance</li></ul>
+    </section>
+    <section class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
+      <h3>Backend &amp; API</h3>
+      <p>APIs REST robustes et performantes, messagerie événementielle, optimisation de bases de données en production.</p>
+      <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>PostgreSQL</li></ul>
+    </section>
+    <section class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1 0 9H7z"/></svg>
+      <h3>Cloud &amp; fiabilité</h3>
+      <p>Déploiement sur Kubernetes, tests de charge, observabilité et patterns de résilience pour tenir sous la charge.</p>
+      <ul class="tags"><li>Kubernetes</li><li>k6</li><li>Prometheus</li><li>Grafana</li><li>Resilience4j</li></ul>
+    </section>
+    <section class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg>
+      <h3>Frontend web</h3>
+      <p>Applications Angular, de AngularJS aux versions récentes, architecture micro-frontends et animation d'une communauté front.</p>
+      <ul class="tags"><li>Angular</li><li>TypeScript</li><li>Micro-frontends</li></ul>
+    </section>
+    <section class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+      <h3>Automatisation &amp; outillage</h3>
+      <p>Pipelines CI planifiés, génération automatique de contenu, extensions navigateur et développement assisté par agents IA.</p>
+      <ul class="tags"><li>GitHub Actions</li><li>Extensions Chrome</li><li>Agents IA</li></ul>
+    </section>
+  </div>
+
+  <h2>Ma façon de construire une app</h2>
+  <p class="section-lead">Les principes que je m'impose sur chaque application publiée.</p>
+  <ul class="principles">
+    <li><strong>Aller à l'essentiel</strong><span>Une interface claire, sans écran superflu.</span></li>
+    <li><strong>Respect de la vie privée</strong><span>Pas de compte imposé, pas de données collectées inutilement.</span></li>
+    <li><strong>Hors ligne d'abord</strong><span>L'app fonctionne sans réseau chaque fois que c'est possible.</span></li>
+    <li><strong>Accessible à tous</strong><span>Lisibilité, contrastes et prise en compte du daltonisme.</span></li>
+    <li><strong>Sans piège</strong><span>Pas de monétisation forcée ni de publicité intrusive.</span></li>
+  </ul>
 
   <h2>Applications</h2>
+  <p class="section-lead">Les projets que je publie sous mon nom.</p>
   <div class="apps">
     <a class="app" href="/hifdh-site/">
       <img src="hifdh.png" alt="">
@@ -76,13 +146,30 @@ footer { text-align: center; padding-top: 56px; color: var(--ink-soft); font-siz
         <p>Mémoriser le Coran en quelques minutes par jour.</p>
       </div>
     </a>
+    <div class="app">
+      <div class="ph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20h6M8 17h8l-1-5 2-3-3-1-1-4h-2l-1 4-3 1 2 3z"/></svg></div>
+      <div>
+        <h3>SheykhMate <span class="badge">En préparation</span></h3>
+        <p>Jouer aux échecs contre l'IA, hors ligne, avec annulation des coups.</p>
+      </div>
+    </div>
   </div>
 
-  <h2>Contact</h2>
-  <p><a href="mailto:radhwan.bm@gmail.com">radhwan.bm@gmail.com</a> · <a href="https://www.linkedin.com/in/rathwan-ben-moussa/">LinkedIn</a></p>
+  <h2>En quelques chiffres</h2>
+  <div class="stats">
+    <div><b>15 ans</b><span>de développement logiciel</span></div>
+    <div><b>Mobile → serveur</b><span>toute la chaîne maîtrisée</span></div>
+    <div><b>Lead technique</b><span>et Scrum Master en équipe agile</span></div>
+  </div>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Une question, un retour sur une application ?</p>
+    <p><a href="mailto:radhwan.bm@gmail.com">radhwan.bm@gmail.com</a> · <a href="https://www.linkedin.com/in/rathwan-ben-moussa/">LinkedIn</a></p>
+  </section>
 
   <footer>
-    <p>© 2026 Rathwan Ben Moussa</p>
+    <p>© 2026 Rathwan Ben Moussa · Marseille, France</p>
   </footer>
 </main>
 </body>
