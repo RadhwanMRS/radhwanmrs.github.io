@@ -5,171 +5,269 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rathwan Ben Moussa — Développeur d'applications</title>
 <meta name="description" content="Rathwan Ben Moussa, développeur indépendant d'applications mobiles. Compétences : mobile, backend Java, cloud Kubernetes, frontend Angular.">
+<meta name="theme-color" content="#0c0d10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --paper: #faf3e8;
-  --paper-raised: #f2e6d4;
-  --line: #e4d4bd;
-  --ink: #2e241b;
-  --ink-soft: #6e5e4f;
-  --gold: #9a6a17;
-  --gold-soft: #c8912f;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #14100c;
-    --paper-raised: #221b14;
-    --line: #3a2f24;
-    --ink: #f3e9dc;
-    --ink-soft: #b3a393;
-    --gold: #e0ad55;
-    --gold-soft: #c8912f;
-  }
+  --bg: #0c0d10;
+  --surface: #15171c;
+  --surface-2: #1c1f26;
+  --line: #2a2e37;
+  --text: #f2f0eb;
+  --muted: #a3a7b1;
+  --accent: #f5b544;
+  --accent-ink: #1a1306;
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --body: Manrope, "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  padding: 0 16px;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Nunito, "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
-main { max-width: 880px; margin: 0 auto; padding: 72px 0 80px; }
-a { color: var(--gold); }
-header { text-align: center; }
-.eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 700; color: var(--gold); margin: 0 0 12px; }
-h1 { font-size: clamp(2rem, 6vw, 2.8rem); line-height: 1.15; margin: 0 0 14px; }
-h2 { font-size: 1.4rem; margin: 64px 0 8px; }
-.section-lead { color: var(--ink-soft); margin: 0 0 24px; }
-.lead { font-size: 1.15rem; color: var(--ink-soft); margin: 0 auto; max-width: 600px; }
-.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 24px; padding: 0; list-style: none; }
-.chips li { border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
-.card { background: var(--paper-raised); border-radius: 18px; padding: 22px 22px 20px; }
-.card svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.card h3 { margin: 10px 0 6px; font-size: 1.08rem; }
-.card p { margin: 0 0 12px; color: var(--ink-soft); font-size: .96rem; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
-.tags li { background: var(--paper); border-radius: 8px; padding: 2px 9px; font-size: .8rem; font-weight: 600; }
-.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; padding: 0; list-style: none; margin: 0; }
-.principles li { border-top: 2px solid var(--gold-soft); padding-top: 12px; }
-.principles strong { display: block; margin-bottom: 2px; }
-.principles span { color: var(--ink-soft); font-size: .95rem; }
-.apps { display: grid; gap: 16px; }
-.app { display: flex; gap: 18px; align-items: center; background: var(--paper-raised); border-radius: 18px; padding: 18px 20px; color: inherit; text-decoration: none; }
-a.app:hover { outline: 2px solid var(--gold-soft); }
-.app img, .app .ph { width: 64px; height: 64px; border-radius: 15px; flex-shrink: 0; }
-.app .ph { display: grid; place-items: center; background: var(--paper); }
-.app .ph svg { width: 32px; height: 32px; stroke: var(--gold); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.app h3 { margin: 0 0 2px; font-size: 1.05rem; }
-.app p { margin: 0; color: var(--ink-soft); }
-.badge { display: inline-block; font-size: .72rem; font-weight: 700; border: 1px solid var(--line); border-radius: 6px; padding: 0 6px; margin-left: 6px; vertical-align: middle; color: var(--ink-soft); }
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; text-align: center; }
-.stats div { padding: 8px; }
-.stats b { display: block; font-size: 1.6rem; color: var(--gold); }
-.stats span { color: var(--ink-soft); font-size: .92rem; }
-.contact { text-align: center; background: var(--paper-raised); border-radius: 18px; padding: 28px 20px; margin-top: 64px; }
-.contact h2 { margin-top: 0; }
-footer { text-align: center; padding-top: 48px; color: var(--ink-soft); font-size: .9rem; }
+a { color: var(--accent); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+/* Nav */
+nav { position: sticky; top: 0; z-index: 10; background: rgba(12,13,16,.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.logo { font-family: var(--display); font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; letter-spacing: -.02em; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 4px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; padding: 10px 12px; border-radius: 10px; }
+.nav-links a:hover { color: var(--text); background: var(--surface); }
+@media (max-width: 640px) { .nav-links a:not(.cta) { display: none; } }
+.nav-links a.cta { color: var(--accent-ink); background: var(--accent); font-weight: 700; }
+
+/* Hero */
+.hero { padding: 88px 0 64px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: .78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; margin: 0 0 28px; }
+.pill i { width: 8px; height: 8px; border-radius: 50%; background: #5fd38d; box-shadow: 0 0 0 4px rgba(95,211,141,.15); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.6rem, 8vw, 5.6rem); line-height: .98; letter-spacing: -.035em; margin: 0 0 28px; }
+h1 em { font-style: normal; color: var(--accent); }
+.hero p.lead { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); max-width: 620px; margin: 0 0 36px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: .98rem; }
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-ghost { border: 1px solid var(--line); color: var(--text); }
+.btn-ghost:hover { background: var(--surface); }
+.stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 56px; padding: 24px 0 0; border-top: 1px solid var(--line); list-style: none; }
+.stack li { font-family: var(--mono); font-size: .82rem; color: var(--muted); background: var(--surface); border-radius: 8px; padding: 6px 12px; }
+
+/* Sections */
+section.block { padding: 72px 0; }
+.kicker { font-family: var(--mono); font-size: .8rem; color: var(--accent); margin: 0 0 12px; }
+h2 { font-family: var(--display); font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 14px; }
+.sub { color: var(--muted); margin: 0 0 40px; max-width: 560px; }
+
+/* Bento */
+.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: flex; flex-direction: column; gap: 10px; transition: border-color .2s, transform .2s; }
+.tile:hover { border-color: #3d424d; transform: translateY(-2px); }
+.tile svg { width: 26px; height: 26px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tile h3 { font-family: var(--display); font-size: 1.3rem; letter-spacing: -.015em; margin: 8px 0 0; }
+.tile p { color: var(--muted); margin: 0; font-size: .97rem; }
+.tile .tags { margin-top: auto; padding-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding-left: 0; margin-bottom: 0; }
+.tile .tags li { font-family: var(--mono); font-size: .74rem; color: var(--text); background: var(--surface-2); border-radius: 6px; padding: 3px 9px; }
+.t-feature { grid-column: span 4; grid-row: span 2; background: linear-gradient(160deg, #1e1a12 0%, var(--surface) 55%); border-color: #3a3122; }
+.t-feature h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.t-feature p { font-size: 1.05rem; max-width: 460px; }
+.phone { align-self: flex-end; width: 120px; height: 200px; border: 2px solid #3a3122; border-radius: 24px; margin-top: 8px; padding: 14px 12px; display: flex; flex-direction: column; gap: 8px; }
+.phone b { display: block; height: 10px; border-radius: 4px; background: var(--surface-2); }
+.phone b:first-child { width: 60%; background: var(--accent); }
+.phone b:nth-child(3) { width: 80%; }
+.t-2 { grid-column: span 2; }
+.t-3 { grid-column: span 3; }
+@media (max-width: 900px) {
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .t-feature { grid-column: span 2; grid-row: auto; }
+  .t-2, .t-3 { grid-column: span 1; }
+}
+@media (max-width: 600px) {
+  .bento { grid-template-columns: 1fr; }
+  .t-feature, .t-2, .t-3 { grid-column: auto; }
+  .phone { display: none; }
+}
+
+/* Principles */
+.principles { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.principles li { display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--line); }
+.principles .n { font-family: var(--mono); color: var(--accent); font-size: .85rem; }
+.principles strong { font-family: var(--display); font-size: 1.25rem; font-weight: 500; letter-spacing: -.01em; }
+.principles span { color: var(--muted); }
+@media (max-width: 640px) {
+  .principles li { grid-template-columns: 44px minmax(0, 1fr); }
+  .principles span { grid-column: 2; }
+}
+
+/* Apps */
+.apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.app { display: flex; gap: 20px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; color: inherit; text-decoration: none; transition: border-color .2s; }
+a.app:hover { border-color: var(--accent); }
+.app img, .app .ph { width: 72px; height: 72px; border-radius: 18px; flex-shrink: 0; }
+.app .ph { display: grid; place-items: center; background: var(--surface-2); }
+.app .ph svg { width: 34px; height: 34px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.app h3 { font-family: var(--display); font-size: 1.25rem; margin: 0 0 4px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.app p { margin: 0; color: var(--muted); }
+.badge { font-family: var(--mono); font-size: .7rem; font-weight: 500; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 1px 7px; }
+.arrow { margin-left: auto; color: var(--muted); font-size: 1.4rem; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.stat { border-top: 2px solid var(--accent); padding-top: 18px; }
+.stat b { display: block; font-family: var(--display); font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -.03em; line-height: 1.1; }
+.stat span { color: var(--muted); }
+
+/* Contact */
+.contact { margin: 40px 0 0; background: var(--accent); color: var(--accent-ink); border-radius: 28px; padding: clamp(32px, 6vw, 64px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px; }
+.contact h2 { margin: 0 0 8px; }
+.contact p { margin: 0; font-size: 1.05rem; }
+.contact .links { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 12px; font-weight: 700; text-decoration: none; }
+.contact a.dark { background: var(--accent-ink); color: var(--accent); }
+.contact a.outline { border: 1.5px solid var(--accent-ink); color: var(--accent-ink); }
+footer { padding: 40px 0 56px; color: var(--muted); font-size: .9rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <p class="eyebrow">Développeur d'applications</p>
-    <h1>Rathwan Ben Moussa</h1>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">rathwan<span>.</span>dev</a>
+    <div class="nav-links">
+      <a href="#competences">Compétences</a>
+      <a href="#apps">Applications</a>
+      <a class="cta" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top" class="wrap">
+  <header class="hero">
+    <p class="pill"><i></i>Apps Android &amp; iOS · Marseille</p>
+    <h1>Rathwan<br>Ben Moussa<em>.</em></h1>
     <p class="lead">Je conçois des applications utiles, sobres et fiables — de l'écran mobile jusqu'au serveur qui le fait tourner. Sur mon temps libre, je publie mes propres apps pour Android et iOS.</p>
-    <ul class="chips" aria-label="Technologies principales">
-      <li>Flutter</li><li>Unity / C#</li><li>Java · Spring Boot</li><li>Angular</li><li>Kubernetes</li><li>PostgreSQL</li>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#apps">Voir mes applications</a>
+      <a class="btn btn-ghost" href="#competences">Mes compétences</a>
+    </div>
+    <ul class="stack" aria-label="Technologies principales">
+      <li>Flutter</li><li>Unity / C#</li><li>Java · Spring Boot</li><li>Angular</li><li>Kubernetes</li><li>PostgreSQL</li><li>Kafka</li>
     </ul>
   </header>
 
-  <h2>Ce que je sais faire</h2>
-  <p class="section-lead">Plus de quinze ans de développement logiciel, mis au service de mes applications.</p>
-  <div class="grid">
-    <section class="card">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-      <h3>Applications mobiles</h3>
-      <p>Apps Android et iOS de bout en bout : conception, développement, tests et publication sur les stores.</p>
-      <ul class="tags"><li>Flutter</li><li>Unity</li><li>C#</li><li>Hors ligne</li></ul>
-    </section>
-    <section class="card">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
-      <h3>Algorithmes &amp; IA de jeu</h3>
-      <p>Moteurs de jeu maison, comme une IA d'échecs minimax avec élagage alpha-bêta, qui tourne entièrement sur le téléphone.</p>
-      <ul class="tags"><li>Minimax</li><li>Alpha-bêta</li><li>Performance</li></ul>
-    </section>
-    <section class="card">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
-      <h3>Backend &amp; API</h3>
-      <p>APIs REST robustes et performantes, messagerie événementielle, optimisation de bases de données en production.</p>
-      <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>PostgreSQL</li></ul>
-    </section>
-    <section class="card">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1 0 9H7z"/></svg>
-      <h3>Cloud &amp; fiabilité</h3>
-      <p>Déploiement sur Kubernetes, tests de charge, observabilité et patterns de résilience pour tenir sous la charge.</p>
-      <ul class="tags"><li>Kubernetes</li><li>k6</li><li>Prometheus</li><li>Grafana</li><li>Resilience4j</li></ul>
-    </section>
-    <section class="card">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg>
-      <h3>Frontend web</h3>
-      <p>Applications Angular, de AngularJS aux versions récentes, architecture micro-frontends et animation d'une communauté front.</p>
-      <ul class="tags"><li>Angular</li><li>TypeScript</li><li>Micro-frontends</li></ul>
-    </section>
-    <section class="card">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
-      <h3>Automatisation &amp; outillage</h3>
-      <p>Pipelines CI planifiés, génération automatique de contenu, extensions navigateur et développement assisté par agents IA.</p>
-      <ul class="tags"><li>GitHub Actions</li><li>Extensions Chrome</li><li>Agents IA</li></ul>
-    </section>
-  </div>
+  <section class="block" id="competences">
+    <p class="kicker">// compétences</p>
+    <h2>Ce que je sais faire</h2>
+    <p class="sub">Plus de quinze ans de développement logiciel, mis au service de mes applications.</p>
+    <div class="bento">
+      <article class="tile t-feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+        <h3>Applications mobiles</h3>
+        <p>Apps Android et iOS de bout en bout : conception, développement, tests et publication sur les stores.</p>
+        <div class="phone" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+        <ul class="tags"><li>Flutter</li><li>Unity</li><li>C#</li><li>Hors ligne</li></ul>
+      </article>
+      <article class="tile t-2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+        <h3>Algorithmes &amp; IA de jeu</h3>
+        <p>Moteurs maison, comme une IA d'échecs minimax avec élagage alpha-bêta, entièrement sur le téléphone.</p>
+        <ul class="tags"><li>Minimax</li><li>Alpha-bêta</li></ul>
+      </article>
+      <article class="tile t-2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg>
+        <h3>Frontend web</h3>
+        <p>Angular, de AngularJS aux versions récentes, micro-frontends et animation d'une communauté front.</p>
+        <ul class="tags"><li>Angular</li><li>TypeScript</li></ul>
+      </article>
+      <article class="tile t-2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
+        <h3>Backend &amp; API</h3>
+        <p>APIs REST robustes, messagerie événementielle, optimisation de bases de données en production.</p>
+        <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>PostgreSQL</li></ul>
+      </article>
+      <article class="tile t-2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.95A6 6 0 0 1 18 9a4.5 4.5 0 0 1 0 9H7z"/></svg>
+        <h3>Cloud &amp; fiabilité</h3>
+        <p>Kubernetes, tests de charge, observabilité et patterns de résilience pour tenir sous la charge.</p>
+        <ul class="tags"><li>Kubernetes</li><li>k6</li><li>Prometheus</li><li>Grafana</li></ul>
+      </article>
+      <article class="tile t-2">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+        <h3>Automatisation</h3>
+        <p>Pipelines CI planifiés, génération de contenu, extensions navigateur, développement assisté par agents IA.</p>
+        <ul class="tags"><li>GitHub Actions</li><li>Agents IA</li></ul>
+      </article>
+    </div>
+  </section>
 
-  <h2>Ma façon de construire une app</h2>
-  <p class="section-lead">Les principes que je m'impose sur chaque application publiée.</p>
-  <ul class="principles">
-    <li><strong>Aller à l'essentiel</strong><span>Une interface claire, sans écran superflu.</span></li>
-    <li><strong>Respect de la vie privée</strong><span>Pas de compte imposé, pas de données collectées inutilement.</span></li>
-    <li><strong>Hors ligne d'abord</strong><span>L'app fonctionne sans réseau chaque fois que c'est possible.</span></li>
-    <li><strong>Accessible à tous</strong><span>Lisibilité, contrastes et prise en compte du daltonisme.</span></li>
-    <li><strong>Sans piège</strong><span>Pas de monétisation forcée ni de publicité intrusive.</span></li>
-  </ul>
+  <section class="block">
+    <p class="kicker">// principes</p>
+    <h2>Ma façon de construire une app</h2>
+    <p class="sub">Les règles que je m'impose sur chaque application publiée.</p>
+    <ol class="principles">
+      <li><span class="n">01</span><strong>Aller à l'essentiel</strong><span>Une interface claire, sans écran superflu.</span></li>
+      <li><span class="n">02</span><strong>Respect de la vie privée</strong><span>Pas de compte imposé, pas de données collectées inutilement.</span></li>
+      <li><span class="n">03</span><strong>Hors ligne d'abord</strong><span>L'app fonctionne sans réseau chaque fois que c'est possible.</span></li>
+      <li><span class="n">04</span><strong>Accessible à tous</strong><span>Lisibilité, contrastes et prise en compte du daltonisme.</span></li>
+      <li><span class="n">05</span><strong>Sans piège</strong><span>Pas de monétisation forcée ni de publicité intrusive.</span></li>
+    </ol>
+  </section>
 
-  <h2>Applications</h2>
-  <p class="section-lead">Les projets que je publie sous mon nom.</p>
-  <div class="apps">
-    <a class="app" href="/hifdh-site/">
-      <img src="hifdh.png" alt="">
-      <div>
-        <h3>Hifdh</h3>
-        <p>Mémoriser le Coran en quelques minutes par jour.</p>
-      </div>
-    </a>
-    <div class="app">
-      <div class="ph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20h6M8 17h8l-1-5 2-3-3-1-1-4h-2l-1 4-3 1 2 3z"/></svg></div>
-      <div>
-        <h3>SheykhMate <span class="badge">En préparation</span></h3>
-        <p>Jouer aux échecs contre l'IA, hors ligne, avec annulation des coups.</p>
+  <section class="block" id="apps">
+    <p class="kicker">// applications</p>
+    <h2>Mes applications</h2>
+    <p class="sub">Les projets que je publie sous mon nom.</p>
+    <div class="apps">
+      <a class="app" href="/hifdh-site/">
+        <img src="hifdh.png" alt="">
+        <div>
+          <h3>Hifdh</h3>
+          <p>Mémoriser le Coran en quelques minutes par jour.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <div class="app">
+        <div class="ph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20h6M8 17h8l-1-5 2-3-3-1-1-4h-2l-1 4-3 1 2 3z"/></svg></div>
+        <div>
+          <h3>SheykhMate <span class="badge">En préparation</span></h3>
+          <p>Jouer aux échecs contre l'IA, hors ligne, avec annulation des coups.</p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <h2>En quelques chiffres</h2>
-  <div class="stats">
-    <div><b>15 ans</b><span>de développement logiciel</span></div>
-    <div><b>Mobile → serveur</b><span>toute la chaîne maîtrisée</span></div>
-    <div><b>Lead technique</b><span>et Scrum Master en équipe agile</span></div>
-  </div>
+  <section class="block">
+    <p class="kicker">// en bref</p>
+    <div class="stats">
+      <div class="stat"><b>15 ans</b><span>de développement logiciel</span></div>
+      <div class="stat"><b>Mobile → serveur</b><span>toute la chaîne maîtrisée</span></div>
+      <div class="stat"><b>Lead technique</b><span>et Scrum Master en équipe agile</span></div>
+    </div>
 
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Une question, un retour sur une application ?</p>
-    <p><a href="mailto:radhwan.bm@gmail.com">radhwan.bm@gmail.com</a> · <a href="https://www.linkedin.com/in/rathwan-ben-moussa/">LinkedIn</a></p>
+    <div class="contact" id="contact">
+      <div>
+        <h2>Une question&nbsp;?</h2>
+        <p>Un retour sur une application, un bug, une idée : écrivez-moi.</p>
+      </div>
+      <div class="links">
+        <a class="dark" href="mailto:radhwan.bm@gmail.com">radhwan.bm@gmail.com</a>
+        <a class="outline" href="https://www.linkedin.com/in/rathwan-ben-moussa/">LinkedIn</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Rathwan Ben Moussa · Marseille, France</p>
+    <span>© 2026 Rathwan Ben Moussa</span>
+    <span>Marseille, France</span>
   </footer>
 </main>
 </body>
